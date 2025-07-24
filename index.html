@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NetLine S.R.L</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e1dbdb;
+      margin: 0;
+      padding: 0;
+      color: #000000;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .decoracion-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0,136,255,0.25) 0%, rgba(0,0,0,0) 80%);
+      border-radius: 50%;
+      animation: moverBlobs 20s ease-in-out infinite alternate;
+    }
+
+    .blob:nth-child(1) {
+      top: 10%;
+      left: 5%;
+    }
+
+    .blob:nth-child(2) {
+      top: 50%;
+      left: 80%;
+      animation-delay: 5s;
+    }
+
+    .blob:nth-child(3) {
+      top: 80%;
+      left: 20%;
+      animation-delay: 2s;
+    }
+
+    @keyframes moverBlobs {
+      0% {
+        transform: scale(1) translateY(0px);
+      }
+      100% {
+        transform: scale(1.2) translateY(-20px);
+      }
+    }
+
+    header {
+      background: #060606;
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    nav {
+      background: #0f5089;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px 0;
+      border-top: 1px solid #002032;
+      border-bottom: 1px solid #00d9ff;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #170074;
+    }
+
+    .contenido {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contenido h2 {
+      font-size: 2rem;
+      color: #000000;
+    }
+
+    .contenido p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #000000;
+    }
+
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    .servicio {
+      background: #ffffff;
+      border-left: 4px solid #00d0ff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgb(15, 0, 129);
+      transition: transform 0.3s ease;
+    }
+
+    .servicio:hover {
+      transform: scale(1.02);
+    }
+
+    .servicio h3 {
+      margin-top: 0;
+      color: #000000;
+    }
+
+    .precio {
+      font-weight: bold;
+      color: #050fd2;
+      font-size: 1.2rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 30px auto;
+      text-align: left;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgb(10, 1, 137);
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #000000;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    form button {
+      background: #000000;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #054a5b;
+    }
+
+    footer {
+      background-color: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 1px solid #000000;
+    }
+
+    footer a {
+      color: #06fffb;
+      text-decoration: none;
+    }
+
+    /* NUEVO estilo para el logo */
+    .logo-img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="decoracion-fondo">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <header>
+    <img src="logo-netline.png" alt="Logo de NetLine S.A." class="logo-img" />
+    <h1>NetLine S.R.L</h1>
+    <p>Conectando tu mundo desde San Javier hacia donde estés</p>
+  </header>
+
+  <nav>
+    <a href="#servicios">Planes</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#reclamos">Reclamos</a>
+    <a href="https://instagram.com/netline.ok" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@netline.ok" target="_blank">TikTok</a>
+  </nav>
+
+  <section class="contenido" id="servicios">
+    <h2>¡Elegí el plan perfecto para vos!</h2>
+    <p>Planes rápidos, confiables y económicos. Desde San Javier, Córdoba.</p>
+    <div class="servicios">
+      <article class="servicio">
+        <h3>Plan Básico</h3>
+        <p>100 Mbps por antena inalámbrica. Ideal para redes sociales y navegación.</p>
+        <div class="precio">$7.500 ARS / mes</div>
+      </article>
+      <article class="servicio">
+        <h3>Plan Familiar</h3>
+        <p>200 Mbps por fibra óptica. Streaming, clases y trabajo remoto sin cortes.</p>
+        <div class="precio">$15.000 ARS / mes</div>
+      </article>
+      <article class="servicio">
+        <h3>Plan Premium</h3>
+        <p>300 Mbps por fibra óptica. Para usuarios exigentes y múltiples dispositivos.</p>
+        <div class="precio">$25.000 ARS / mes</div>
+      </article>
+      <article class="servicio">
+        <h3>Plan Empresa</h3>
+        <p>600 Mbps simétrico/dedicado por fibra óptica. Estabilidad total para negocios.</p>
+        <div class="precio">$49.900 ARS / mes</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contenido" id="contacto">
+    <h2>Contacto</h2>
+    <form>
+      <label for="nombre">Nombre y Apellido</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensaje">Mensaje o consulta</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </section>
+
+  <section class="contenido" id="reclamos">
+    <h2>Reclamos o sugerencias</h2>
+    <form>
+      <label for="cliente">Nombre del cliente</label>
+      <input type="text" id="cliente" name="cliente" required />
+
+      <label for="tipo">Tipo de comentario</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">Seleccionar...</option>
+        <option value="reclamo">Reclamo</option>
+        <option value="sugerencia">Sugerencia</option>
+      </select>
+
+      <label for="detalle">Detalle</label>
+      <textarea id="detalle" name="detalle" rows="4" required></textarea>
+
+      <label for="telefono">Teléfono de contacto</label>
+      <input type="tel" id="telefono" name="telefono" />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NetLine S.R.L – San Javier, Córdoba</p>
+    <p>Lema: <em>Conectando tu mundo</em></p>
+    <p>Instagram: <a href="https://instagram.com/netline.ok">@netline.ok</a> | TikTok: <a href="https://tiktok.com/@netline.ok">netline.ok</a></p>
+  </footer>
+</body>
+</html>
